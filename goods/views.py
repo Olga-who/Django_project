@@ -3,7 +3,6 @@ from django.core.paginator import Paginator
 
 from goods.models import Products
 from goods.utils import q_search
-import logging
 
 
 def catalog(request, category_slug=None):
@@ -37,7 +36,6 @@ def catalog(request, category_slug=None):
 
 
 def product(request, product_slug):
-    logging.INFO("The request is = {request}, product slug = {product_slug}")
     product = Products.objects.get(slug=product_slug)
     context = {"product": product}
     return render(request, "goods/product.html", context)

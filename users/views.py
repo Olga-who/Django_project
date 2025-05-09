@@ -86,7 +86,7 @@ def profile(request):
              )
              .order_by("-id")
     )
-    # AttributeError("Manager isn't accessible via Order instances")
+
 
     context = {
         'title': 'Home - Кабинет',
