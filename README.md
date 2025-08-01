@@ -9,7 +9,7 @@
 * PostgreSQL
 ## Работа с проектом
 * Создайте рабочую папку и в ней выполните команду: git clone https://github.com/Olga-who/Django_project.git
-* Спуститься в папку app1 - cd app1
+* Спуститься в папку Django_project - cd Django_project
 * Создание  и активация виртуального окружения:
 * * python -m venv venv
   * source venv/bin/activate  # для Linux/MacOS
