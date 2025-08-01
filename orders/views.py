@@ -8,6 +8,7 @@ from carts.models import Cart
 from orders.forms import CreateOrderForm
 from orders.models import Order, OrderItem
 
+
 @login_required
 def create_order(request):
     if request.method == "POST":
@@ -19,7 +20,7 @@ def create_order(request):
                     cart_items = Cart.objects.filter(user=user)
 
                     if cart_items.exists():
-                        #Создать заказ
+                        # Создать заказ
                         order = Order.objects.create(
                             user=user,
                             phone_number=form.cleaned_data["phone_number"],
@@ -33,7 +34,6 @@ def create_order(request):
                             name = cart_item.product.name
                             price = cart_item.product.sell_price()
                             quantity = cart_item.quantity
-
 
                             if product.quantity < quantity:
                                 raise ValidationError(
@@ -67,9 +67,5 @@ def create_order(request):
 
         form = CreateOrderForm(initial=initial)
 
-    context = {
-            "title": "Home - Оформление заказа", 
-            "form": form,
-            "order": True
-        }
-    return render(request, 'orders/create_order.html', context=context)
+    context = {"title": "Home - Оформление заказа", "form": form, "order": True}
+    return render(request, "orders/create_order.html", context=context)
