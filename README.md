@@ -13,7 +13,7 @@
 * Создание  и активация виртуального окружения:
 * * python -m venv venv
   * source venv/bin/activate  # для Linux/MacOS
-  * venv/Scripts/activate     # для Windows
+  * venv\Scripts\activate     # для Windows
 * Установка зависимостей - pip install -r requirements.txt
 * Настройка PostgreSQL - создание базы данных, я использовала PgAdmin, обновить файл settings.py (путь app1/app/settings.py) с вашими параметрами
 * Создание миграций - py manage.py makemigrations
